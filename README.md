@@ -93,7 +93,9 @@ docker compose up -d
     - Navigate to **Dashboards** > **New** > **Import**.
     - Import the following dashboards by their ID:
       - **`13978`**: A good starting point for macOS system metrics (from `node_exporter`).
+        - https://grafana.com/grafana/dashboards/1860-node-exporter-full/
       - **`24129`**: For detailed process metrics (from `darwin-exporter`).
+        - https://grafana.com/grafana/dashboards/24129-macos-process-metrics/
     - For each import, be sure to select your Prometheus data source.
 
 ## Usage
