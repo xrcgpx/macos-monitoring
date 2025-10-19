@@ -60,9 +60,15 @@ https://github.com/umegbewe/darwin-exporter
     ```
 
 3.  To get complete metrics, this exporter needs to be run with `root` privileges. Open a **dedicated terminal window** for this, as it will run in the foreground.
-    `bash
-sudo /opt/homebrew/opt/darwin-exporter/bin/darwin-exporter --bind 0.0.0.0 --port 1053
-` > **Note on `sudo brew services`**: > During setup, I found that running `darwin-exporter` as a root service via `sudo brew services start` was unreliable. The service would appear to start but would not listen on the specified port. > > Therefore, the most reliable method is to run the command directly in the foreground as shown above. Keep this terminal window open, as closing it will stop the exporter.
+
+    ```bash
+    sudo /opt/homebrew/opt/darwin-exporter/bin/darwin-exporter --bind 0.0.0.0 --port 1053
+    ```
+
+    > **Note on `sudo brew services`**:
+    >
+    > During setup, I found that running `darwin-exporter` as a root service via `sudo brew services start` was unreliable. The service would appear to start but would not listen on the specified port.
+    > Therefore, the most reliable method is to run the command directly in the foreground as shown above. Keep this terminal window open, as closing it will stop the exporter.
 
 ### 2. Launch Prometheus & Grafana
 
