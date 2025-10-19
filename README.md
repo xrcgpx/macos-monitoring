@@ -23,6 +23,8 @@ These exporters run directly on your Mac to collect host-level data.
 
 #### Node Exporter (System-wide metrics)
 
+https://github.com/prometheus/node_exporter
+
 1.  Install `node_exporter` using Homebrew:
 
     ```bash
@@ -36,11 +38,14 @@ These exporters run directly on your Mac to collect host-level data.
     ```
 
 3.  Start `node_exporter` as a background service:
+
     ```bash
     brew services start node_exporter
     ```
 
 #### Darwin Exporter (macOS-specific & process metrics)
+
+https://github.com/umegbewe/darwin-exporter
 
 1.  Tap the custom repository:
 
@@ -56,11 +61,8 @@ These exporters run directly on your Mac to collect host-level data.
 
 3.  To get complete metrics, this exporter needs to be run with `root` privileges. Open a **dedicated terminal window** for this, as it will run in the foreground.
     `bash
-    sudo /opt/homebrew/opt/darwin-exporter/bin/darwin-exporter --bind 0.0.0.0 --port 1053
-    ` > **Note on `sudo brew services`**:
-    > During setup, I found that running `darwin-exporter` as a root service via `sudo brew services start` was unreliable. The service would appear to start but would not listen on the specified port.
-    >
-    > Therefore, the most reliable method is to run the command directly in the foreground as shown above. Keep this terminal window open, as closing it will stop the exporter.
+sudo /opt/homebrew/opt/darwin-exporter/bin/darwin-exporter --bind 0.0.0.0 --port 1053
+` > **Note on `sudo brew services`**: > During setup, I found that running `darwin-exporter` as a root service via `sudo brew services start` was unreliable. The service would appear to start but would not listen on the specified port. > > Therefore, the most reliable method is to run the command directly in the foreground as shown above. Keep this terminal window open, as closing it will stop the exporter.
 
 ### 2. Launch Prometheus & Grafana
 
